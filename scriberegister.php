@@ -90,7 +90,16 @@ if($conn->connect_error)
 
              <div class="inputwrap"> 
          Email: <br>
-         <input type="text" name ="email">
+		 </div>
+			   <input type="text" name ="email">
+        
+		   
+               <div class="inputwrap">
+           <!--time format, redo-->
+          Password:<br>
+          <input type="password" name ="location">
+            
+              
 		 <br>
             <input type="submit" name="submit"/>
            </div>

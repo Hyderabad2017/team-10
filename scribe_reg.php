@@ -1,3 +1,21 @@
+<?php
+$conn=new mysqli("localhost","root","","iandeye");
+if($conn->connect_error)
+ {
+ 	 die("Connection failed". $conn->connect_error);
+ }
+ if(isset($_POST['submit']))
+ {
+   $email=$_POST['email'];
+   $name=$_POST['name'];
+   $location=$_POST['location'];
+   $contact=$_POST['contact'];
+   $language=$_POST['language'];
+   $qualification=$_POST['qualification'];
+   $sql="INSERT into scribe_details(email,name,contact,location,qualification,language)values('$email','$name','$contact','$location','$qualification','$language')";
+   $res=$conn->query($sql);
+ }
+ ?>
 <!DOCTYPE html>
  <head>
   <title> Scribe Registration</title>
@@ -23,25 +41,18 @@
              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  </head>
  <body>
+ <form method="post">
    <div class="container">
      <div class="jumbotron">
        <h1>Scribe Registration</h1>
      </div>
      <br></br>
-     <form action="upload.php" method="Post" enctype="multipart/form-data">
-       <div class="col-sm-4">
-         <input type="file" name="filetoupload"/>
-         <br>
-         <input type="submit" value="Upload"/>
-         <br>
-         <br>
-       </div>
        <div class="col-sm-8">
          <div class="col-sm-4">
   <select name="Language">
   <option value="ENGLISH">ENGLISH</option>
-  <option value="TELUGU">HINDI</option>
-  <option value="ENGLISH">ENGLISH</option>
+  <option value="HINDI">HINDI</option>
+  <option value="TELUGU">TELUGU</option>
 </select>
          
        </div>
@@ -80,7 +91,8 @@
              <div class="inputwrap"> 
          Email: <br>
          <input type="text" name ="email">
-           
+		 <br>
+            <input type="submit" name="submit"/>
            </div>
            
        </div>

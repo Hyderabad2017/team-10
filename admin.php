@@ -20,6 +20,8 @@ else
 <br><br><br><br><br>
 
 <h3><p align="center" style="color:#FCFBFA;">Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="email"></p></h3>
+<h3><p align="center" style="color:#FCFBFA;">Password&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="password" name="password"></p></h3>
+
 <?php
 
 ?>
@@ -28,7 +30,7 @@ else
 if(isset($_POST['admin-submit']))
 {
 	$email=$_POST['email'];
-	$sql="SELECT * from admin where email='$email'";
+	$sql="SELECT * from admin where email='$email' and password='$password'";
 	$result=$conn->query($sql);
 	if($result->num_rows==1)
 	{
