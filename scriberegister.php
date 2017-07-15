@@ -71,18 +71,13 @@ if($conn->connect_error)
      <div class="jumbotron">
        <h1>Scribe Registration</h1>
      </div>
-     <br></br>
-       <div class="col-sm-8">
-         <div class="col-sm-4">
-  <select name="language">
-  <option value="ENGLISH">ENGLISH</option>
-  <option value="HINDI">HINDI</option>
-  <option value="TELUGU">TELUGU</option>
-</select>
-         
+     <br></br>         
        </div>
          <div class="col-sm-8">
            <br>
+		   <div class="inputwrap">
+			 <div class="col-sm-8">
+         <div class="col-sm-4">
              <div class="inputwrap">
          Name Of Scribe:<br>
          <input type="text" name ="name"><?php echo $nameErr;?>
@@ -97,7 +92,14 @@ if($conn->connect_error)
               </div>
              <br>
 
-             <div class="inputwrap">
+             
+  Medium<br>
+  <select name="language">
+  <option value="ENGLISH">ENGLISH</option>
+  <option value="HINDI">HINDI</option>
+  <option value="TELUGU">TELUGU</option>
+</select>
+<br>
           Qualification:<br>
           <input type="text" name ="qualification">
             
