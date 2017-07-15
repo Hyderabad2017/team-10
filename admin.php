@@ -6,6 +6,25 @@ if($conn->connect_error)
 }
 else
  	echo "Connection"." "."successful";
+
+
+?>
+<!DOCTYPE html>
+<head>
+<html lang="en">
+<head>
+
+<h1><p align="center" style="color:#FCFBFA  ;">ADMIN LOGIN</p></h1>
+</head>
+<form method="post">
+<br><br><br><br><br>
+
+<h3><p align="center" style="color:#FCFBFA;">Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="email"></p></h3>
+<?php
+
+?>
+<p align="center"><input type="submit" name="admin-submit" value="Register"></p>
+<?php
 if(isset($_POST['admin-submit']))
 {
 	$email=$_POST['email'];
@@ -44,21 +63,7 @@ if(isset($_POST['admin-submit']))
 		echo "<br>NOT AUTHORISED AS ADMIN";
 		
 	}	
-}
-
-?>
-<!DOCTYPE html>
-<head>
-<html lang="en">
-<head>
-
-<h1><p align="center" style="color:#FCFBFA  ;">ADMIN LOGIN</p></h1>
-</head>
-<form method="post">
-<br><br><br><br><br>
-<h3><p align="center" style="color:#FCFBFA;">Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="email"></p></h3>
-
-<p align="center"><input type="submit" name="admin-submit" value="Register"></p>
+}?>
 </form>
 </body>
 </html>
