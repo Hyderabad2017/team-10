@@ -105,7 +105,6 @@ if($conn->connect_error)
 		   
              </div>
 			
-			 
 			<div class="inputwrap"> 
          Start Time:<br>
          <input type="text" name ="starttime">
@@ -121,7 +120,6 @@ if($conn->connect_error)
 		 <br>
             <input type="submit" name="submit"/>
            </div>
-           
        </div>
      </form>
    </div>

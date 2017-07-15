@@ -1,15 +1,13 @@
 <?php
-$conn=new mysqli("localhost","root","","eyeandi");
+$conn=new mysqli("localhost","root","","iandeye");
 if($conn->connect_error)
  {
  	 die("Connection failed". $conn->connect_error);
-
  }
  else
  	echo "Connection successful";
   session_start();
   
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,19 +28,14 @@ if(isset($_POST['accept-submit']))
   echo "$email";
    $status=1;
 	//$sql="SELECT * from studentregister";
-	 $sql="UPDATE  student_details set scribeemail='$email',status_s='$status' where status_s=0";
+	 $sql="UPDATE  student set scribeemail='$email',status='$status' where status=0";
    $conn->query($sql);
    //if($conn->query($sql))
     //echo "updated";
  // else
    //  echo "not updated"; 	
-
     }
-
 ?>
 </form>
 
 </body>
-
-
-

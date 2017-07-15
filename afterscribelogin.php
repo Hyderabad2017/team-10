@@ -1,15 +1,13 @@
 <?php
-$conn=new mysqli("localhost","root","","eyeandi");
+$conn=new mysqli("localhost","root","","iandeye");
 if($conn->connect_error)
  {
  	 die("Connection failed". $conn->connect_error);
-
  }
  else
  	echo "Connection successful";
   session_start();
   $email=$_SESSION['email'];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +26,7 @@ if($conn->connect_error)
 if(isset($_POST['display-submit']))
 {
 	//$sql="SELECT * from studentregister";
-	$sql2="SELECT * from scribes s,student_details sd where s.location=sd.location and s.language=sd.language_s and s.qualvalue < sd.qualification and s.email='$email'";
+	$sql2="SELECT * from scribe s,student sd where s.location=sd.location and s.language=sd.language and s.qualification < sd.qualification and s.email='$email'";
 	$result=$conn->query($sql2);
     while($row=$result->fetch_assoc())
     {    
@@ -44,6 +42,3 @@ if(isset($_POST['display-submit']))
 </form>
 
 </body>
-
-
-

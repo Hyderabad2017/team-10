@@ -17,16 +17,14 @@ else
 <form method="post">
 <br><br><br><br><br>
 
-<h3><p align="center" style="color:#FCFBFA;">Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="email"></p></h3>
-<h3><p align="center" style="color:#FCFBFA;">Password&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="password" name="password"></p></h3>
-
-<p align="center"><input type="submit" name="admin-submit" value="Register"></p>
 
 <?php
-if(isset($_POST['admin-submit']))
-{
-	$email=$_POST['email'];
-	$sql="SELECT * from student where email='$email' and status=1 and password='$password";
+session_start();
+$email=$_SESSION['email'];
+
+	
+
+	$sql="SELECT * from student where email='$email' and status=1 ";
 	$result=$conn->query($sql);
 	if($result->num_rows==1)
 	{
@@ -39,6 +37,7 @@ if(isset($_POST['admin-submit']))
 		echo"<br>SCRIBE ACCEPTED";
 		echo"<br>";
 		echo"<br>";
+		echo "&nbsp"."&nbsp";
 		echo "<table border='4' class='stats' cellspacing='0'><tr><th>EMAIL</th> <th>NAME</th><th>CONTACT</th><th>location</th><th>qualification</th><th>language</th></tr>";
 		$results=$conn->query($newsql1);
 		while ($row = $results->fetch_assoc()) {
@@ -50,5 +49,5 @@ if(isset($_POST['admin-submit']))
 	else{
 		echo "<br>NOT SELECTED";
 	}
-}
+
 ?>

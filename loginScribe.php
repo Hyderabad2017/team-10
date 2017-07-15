@@ -16,8 +16,8 @@ if(isset($_POST['login-submit']))
 	if($result->num_rows>0)
 	{
 		echo"<br> Login successful";
-		$_SESSION['loggeduser']=$email;
-		header('location:https:afterscribelogin');
+		$_SESSION['email']=$email;
+		header('location:afterscribelogin.php');
 	}
 	else
 		echo"<br> Login failed";

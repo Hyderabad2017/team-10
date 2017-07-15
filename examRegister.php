@@ -1,5 +1,5 @@
 <?php
-$conn=new mysqli("localhost","root","","eyeandiExam");
+$conn=new mysqli("localhost","root","","iandeye");
 if($conn->connect_error)
 {
  	 die("Connection failed". $conn->connect_error);
@@ -15,7 +15,7 @@ if(isset($_POST['register-submit']))
    $medium=$_POST['medium'];
    $day=$_POST['day'];
    $qualification=$_POST['qualification'];
-   $sql="INSERT into scribes(date,start,duration,medium,day,qualification)values('$date','$start','$duration','$medium','$day','$qualification')";
+   $sql="INSERT into scribe(date,start,duration,medium,day,qualification)values('$date','$start','$duration','$medium','$day','$qualification')";
    $res=$conn->query($sql);
 if($res)
   echo" inserted";
