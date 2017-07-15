@@ -4,9 +4,18 @@ if($conn->connect_error)
  {
  	 die("Connection failed". $conn->connect_error);
  }
- $emailErr=$email="";
+ $emailErr=$email=$nameErr=$name="";
  if(isset($_POST['submit']))
  {
+	 if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed"; 
+    }
+  }
 	 if (empty($_POST['email'])) {
     $emailErr = "Email is required";
   } else {
@@ -76,7 +85,7 @@ if($conn->connect_error)
            <br>
              <div class="inputwrap">
          Name Of Scribe:<br>
-         <input type="text" name ="name">   
+         <input type="text" name ="name"><?php echo $nameErr;?>
              </div>
              <br>
 
