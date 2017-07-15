@@ -4,8 +4,18 @@ if($conn->connect_error)
  {
  	 die("Connection failed". $conn->connect_error);
  }
+ $emailErr=$email="";
  if(isset($_POST['submit']))
  {
+	 if (empty($_POST['email'])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST['email']);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format"; 
+    }
+  }
    $email=$_POST['email'];
    $name=$_POST['name'];
    $location=$_POST['location'];
@@ -15,6 +25,12 @@ if($conn->connect_error)
    $sql="INSERT into scribe(email,name,contact,location,qualification,language)values('$email','$name','$contact','$location','$qualification','$language')";
    $res=$conn->query($sql);
  }
+ function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
  ?>
 <!DOCTYPE html>
  <head>
@@ -91,7 +107,7 @@ if($conn->connect_error)
              <div class="inputwrap"> 
          Email: <br>
 		 </div>
-			   <input type="text" name ="email">
+			   <input type="text" name ="email"><?php echo $emailErr;?>
         
 		   
                <div class="inputwrap">
