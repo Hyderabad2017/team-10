@@ -15,7 +15,8 @@ if($conn->connect_error)
    $qualification=$_POST['qualification'];
    $duration=$_POST['duration'];
    $starttime=$_POST['starttime'];
-   $sql="INSERT into student(email,name,contact,exam,qualification,location,language,duration,starttime)values('$email','$name','$contact','$exam','$qualification','$location','$language','$duration','$starttime')";
+   $password=$_POST['password'];
+   $sql="INSERT into student(email,name,contact,exam,qualification,location,language,duration,starttime,password)values('$email','$name','$contact','$exam','$qualification','$location','$language','$duration','$starttime','$password')";
    $res=$conn->query($sql);
  }
  ?>
@@ -87,7 +88,13 @@ if($conn->connect_error)
             
               </div>
              <br>
-
+			  <div class="inputwrap">
+           <!--time format, redo-->
+          Password<br>
+          <input type="password" name ="password">
+            
+              </div>
+			<br>
              <div class="inputwrap">
           Qualification Required:<br>
           <input type="text" name ="qualification">
