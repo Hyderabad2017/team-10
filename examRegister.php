@@ -1,12 +1,12 @@
 <?php
 $conn=new mysqli("localhost","root","","eyeandiExam");
 if($conn->connect_error)
- {
+{
  	 die("Connection failed". $conn->connect_error);
- }
- else
+}
+else
  	echo "Connection"." "."successful";
- if(isset($_POST['register-submit']))
+if(isset($_POST['register-submit']))
  {
    $date=$_POST['date'];
   // echo"availability =" .$x;
@@ -29,12 +29,12 @@ else
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<h1><p align="center" style="color:#FCFBFA  ;">REGISTRATION FORM</p></h1>
+<h1><p align="center" style="color:#FCFBFA  ;">EXAM SELECTION</p></h1>
 </head>
 <body background = "blue.jpg">
 <form method="post">
 <br><br><br><br><br>
-  <h3><p align="center" style="color:#FCFBFA;">Exam Date &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="calendar" name="date"></p></h3>
+  <h3><p align="center" style="color:#FCFBFA;">Exam Date &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="date" name="date"></p></h3>
   <h3><p align="center" style="color:#FCFBFA;">Start Time&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="start"></p></h3>
   
   
