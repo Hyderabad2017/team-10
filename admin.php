@@ -13,7 +13,7 @@ else
 <head>
 <html lang="en">
 <head>
-
+<body background = "blue.jpg">
 <h1><p align="center" style="color:#FCFBFA  ;">ADMIN LOGIN</p></h1>
 </head>
 <form method="post">
@@ -33,11 +33,11 @@ if(isset($_POST['admin-submit']))
 	if($result->num_rows==1)
 	{
 		echo"<br> Login successful";
-		$newsql="select count(*) from scribe";
-		$result=$conn->query($newsql);
+		$newsql="select * from scribe";
+		$resultsq=$conn->query($newsql);
 		echo"<br>NUMBER OF REGSITERED SCRIBES = ";
-		echo $result->num_rows;
-		
+		echo $resultsq->num_rows;
+		echo "<br>";
 		$newsql1="select * from scribe";
 		echo"<br>SCRIBE REGISTERS";
 		echo"<br>";
