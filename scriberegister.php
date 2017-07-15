@@ -42,29 +42,47 @@ if($conn->connect_error)
 }
  ?>
 <!DOCTYPE html>
- <head>
-  <title> Scribe Registration</title>
-   <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-         <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-           <link rel="stylesheet" type="text/css" href="main.css">
-             <style>
-               $yellow : #fcdab7;
-               .jumbotron {
-               margin-bottom: 0px;
-               background-image: url(red-polygon.jpg);
-               background-position: 0% 25%;
-               background-size: cover;
-               background-repeat: no-repeat;
-               color: white;
-               text-shadow: black 0.3em 0.3em 0.3em;
-               }
-               
-             </style>
-             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- </head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="main.css">
+      <style>
+        .jumbotron {
+        margin-bottom: 0px;
+        background-image: url(red-polygon.jpg);
+        background-position: 0% 25%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+        text-shadow: black 0.3em 0.3em 0.3em;
+        margin:0;
+        }
+        img{
+        align: center;
+        width:75%; /* you can use % */
+        height: 25%;
+        margin: 15px auto;
+        display: block;
+        }
+        #fixbg{
+
+        background-image: url(greycubes.png);
+        padding: 10px;
+
+
+        }
+        .col-md-5{
+        color: #fff;
+
+        }
+
+      </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
  <body>
  <form method="post">
    <div class="container">
@@ -73,33 +91,40 @@ if($conn->connect_error)
      </div>
      <br></br>         
        </div>
+	    <div class="col-sm-4">
+         <br>
+         <br>
+         <br>
+       </div>
          <div class="col-sm-8">
            <br>
 		   <div class="inputwrap">
 			 <div class="col-sm-8">
          <div class="col-sm-4">
              <div class="inputwrap">
-         Name Of Scribe:<br>
+         Name Of Scribe:
          <input type="text" name ="name"><?php echo $nameErr;?>
              </div>
              <br>
 
                <div class="inputwrap">
            <!--time format, redo-->
-          Location:<br>
+          Location:
           <input type="text" name ="location">
             
               </div>
              <br>
 
-             
+   <div class="inputwrap">          
   Medium<br>
   <select name="language">
   <option value="ENGLISH">ENGLISH</option>
   <option value="HINDI">HINDI</option>
   <option value="TELUGU">TELUGU</option>
 </select>
+</div>
 <br>
+<div class="inputwrap">  
           Qualification:<br>
           <input type="text" name ="qualification">
             
@@ -130,7 +155,6 @@ if($conn->connect_error)
 		 <br>
             <input type="submit" name="submit"/>
            </div>
-           
        </div>
      </form>
    </div>
