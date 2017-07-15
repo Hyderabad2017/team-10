@@ -30,6 +30,7 @@ else
 if(isset($_POST['admin-submit']))
 {
 	$email=$_POST['email'];
+	$password=$_POST['password'];
 	$sql="SELECT * from admin where email='$email' and password='$password'";
 	$result=$conn->query($sql);
 	if($result->num_rows==1)

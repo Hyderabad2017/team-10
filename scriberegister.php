@@ -31,7 +31,8 @@ if($conn->connect_error)
    $contact=$_POST['contact'];
    $language=$_POST['language'];
    $qualification=$_POST['qualification'];
-   $sql="INSERT into scribe(email,name,contact,location,qualification,language)values('$email','$name','$contact','$location','$qualification','$language')";
+   $password=$_POST['password'];
+   $sql="INSERT into scribe(email,name,contact,location,qualification,language,password)values('$email','$name','$contact','$location','$qualification','$language','$password')";
    $res=$conn->query($sql);
  }
  function test_input($data) {
@@ -71,44 +72,34 @@ if($conn->connect_error)
      <div class="jumbotron">
        <h1>Scribe Registration</h1>
      </div>
-     <br></br>         
+     <br></br>
+       <div class="col-sm-8">
+         <div class="col-sm-4">
+  <select name="language">
+  <option value="ENGLISH">ENGLISH</option>
+  <option value="HINDI">HINDI</option>
+  <option value="TELUGU">TELUGU</option>
+</select>     
        </div>
          <div class="col-sm-8">
            <br>
-		   <div class="inputwrap">
-			 <div class="col-sm-8">
-         <div class="col-sm-4">
              <div class="inputwrap">
          Name Of Scribe:<br>
          <input type="text" name ="name"><?php echo $nameErr;?>
              </div>
              <br>
-
                <div class="inputwrap">
            <!--time format, redo-->
           Location:<br>
           <input type="text" name ="location">
-            
               </div>
              <br>
-
-             
-  Medium<br>
-  <select name="language">
-  <option value="ENGLISH">ENGLISH</option>
-  <option value="HINDI">HINDI</option>
-  <option value="TELUGU">TELUGU</option>
-</select>
-<br>
+             <div class="inputwrap">
           Qualification:<br>
           <input type="text" name ="qualification">
-            
               </div>
              <br>
-
              <div class="inputwrap">
-			 
-			 
          Contact no:<br>
          <input type="text" name ="contact">
            
@@ -124,7 +115,7 @@ if($conn->connect_error)
                <div class="inputwrap">
            <!--time format, redo-->
           Password:<br>
-          <input type="password" name ="location">
+          <input type="password" name ="password">
             
               
 		 <br>
