@@ -10,7 +10,7 @@ if($conn->connect_error)
  if(isset($_POST['register-submit']))
  {
    $availability=$_POST['availability'];
-   echo"availability =" .$x;
+  // echo"availability =" .$x;
    $location=$_POST['location'];
    $language=$_POST['language'];
    $qualification=$_POST['qualification'];
@@ -29,17 +29,7 @@ else
  }
  
 
-/*if((isset($_POST['register-submit'])))
-{
-  $username=$_POST['username'];
-  $password=$_POST['password'];
-  //echo"username :$username";
-  $sql="INSERT into userstable (username,password)values('$username','$password')";
-  $conn->query($sql);
-  //"INSERT INTO users_db (email,name,mobile,password,role,ld) VALUES ('$email','$name','$phone','$password','$role','$ld')";
-  echo" \nregistration successful";
 
-}*/
 ?>
 
 
@@ -93,7 +83,7 @@ else
 
 
   <p align="center"><input type="submit" name="register-submit" value="Register"></p>
-  <p align="center"><a href="loginform.php">log in?</a></p>
+  <p align="center"><a href="login.php">log in?</a></p>
 
 </from>
 
