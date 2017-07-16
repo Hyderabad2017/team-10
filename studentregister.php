@@ -13,6 +13,7 @@ if($conn->connect_error)
    $exam=$_POST['exam'];
    $language=$_POST['language'];
    $qualification=$_POST['qualification'];
+   echo $qualification;
    $duration=$_POST['duration'];
    $starttime=$_POST['starttime'];
    $password=$_POST['password'];
@@ -97,12 +98,17 @@ if($conn->connect_error)
 			<br>
              <div class="inputwrap">
           Qualification Required:<br>
-          <input type="text" name ="qualification">
-            
-              </div>
+          <select name ="qualification" id="qualification">
+		  <option value=14>BTECH</option>
+           <option value=12>12TH</option>
+			<option value=11>11TH</option>
+			<option value=9>9TH</option>
+              </select>
              <br>
-
-             <div class="inputwrap">
+			 </div>
+				<br>
+				
+            <div class="inputwrap">
 			 
 			 
          Contact no:<br>
